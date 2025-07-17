@@ -6,14 +6,14 @@ class Solution(object):
         :rtype: List[int]
         """
 
-        if ((len(nums) == 1) and (nums[0] == target)):
-            return [nums[0]]
+        # This is a hashmap based solution
 
-        for left in range(len(nums)):
-            for right in range(left+1, len(nums)):
-                if ((nums[left]+nums[right]) == target):
-                    print(f"[{left},{right}]")
-                    return [left, right]
+        dic = {}
+        for i, num in enumerate(nums):
+            if target - num in dic:
+                print([dic[target - num], i])
+                return [dic[target - num], i]
+            dic[num] = i
 
 
 nums1 = [3, 2, 4]
