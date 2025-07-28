@@ -24,3 +24,8 @@ class Solution(object):
                 longest = p2
 
         return longest
+
+
+sol = Solution()
+print(sol.longestPalindrome("babad"))  # Output: "bab" or "aba"
+print(sol.longestPalindrome("cbbd"))   # Output: "bb"
