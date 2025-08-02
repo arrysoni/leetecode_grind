@@ -31,3 +31,11 @@ class Solution(object):
             i += 1
 
         return sign * result
+
+
+sol = Solution()
+print(sol.myAtoi("42"))          # Output: 42
+print(sol.myAtoi("   -042"))     # Output: -42
+print(sol.myAtoi("1337c0d3"))    # Output: 1337
+print(sol.myAtoi("0-1"))         # Output: 0
+print(sol.myAtoi("words and 987"))  # Output: 0
