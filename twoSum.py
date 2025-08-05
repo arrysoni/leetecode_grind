@@ -11,7 +11,7 @@ class Solution(object):
         dic = {}
         for i, num in enumerate(nums):
             if target - num in dic:
-                print([dic[target - num], i])
+                print("[dic[target - num], i]:", [dic[target - num], i])
                 return [dic[target - num], i]
             dic[num] = i
 
