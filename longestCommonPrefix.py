@@ -1,28 +1,20 @@
 class Solution(object):
     def longestCommonPrefix(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: str
-        """
+        if not strs:
+            return ""
 
-        sorted_strs = strs.sort()
-        shortest_word = strs[0]
-        longest_prefix = ""
+        # Sort the list of strings
+        strs.sort()
 
-        for i in range(1, len(strs)):
-            for j in range(len(shortest_word)):
+        # Compare the first and last words only (they are most different)
+        first = strs[0]
+        last = strs[-1]
+        i = 0
 
-                if (longest_prefix) == "":
-                    if (shortest_word[j] == sorted_strs[i][j]):
-                        longest_prefix += shortest_word[j]
+        while i < len(first) and i < len(last) and first[i] == last[i]:
+            i += 1
 
-                else:
-                    for i in range(len(longest_prefix)):
-                        if (longest_prefix[i] != sorted_strs[i][j]):
-                            longest_prefix = longest_prefix[0:i]
-
-        print(longest_prefix)
-        return longest_prefix
+        return first[:i]
 
 
 strs = ["flow", "flower", "flight"]
